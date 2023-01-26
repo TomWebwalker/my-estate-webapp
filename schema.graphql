@@ -1,0 +1,75 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type AccessToken {
+    access_token: String!
+}
+
+type Mutation {
+    login(loginInput: LoginUserInput!): AccessToken!
+    register(registerInput: RegisterUserInput!): User!
+    userCreate(adminUser: CreateAdminUserInput!): User!
+    userDelete(id: Int!): Boolean!
+    userUpdate(adminUser: UpdateAdminUserInput!): Boolean!
+}
+
+type Query {
+    profile: User!
+    user(id: Int!): User
+    users(limit: Int! = 10, offset: Int! = 0, sortBy: String = "", sortDir: SortDir): UserRows!
+}
+
+type User {
+    email: String!
+    id: Int!
+    name: String!
+    role: String!
+}
+
+type UserRows {
+    rows: [User!]!
+    total: Int!
+}
+
+enum SortDir {
+    ASC
+    DESC
+}
+
+enum UserRole {
+    ADMIN
+    MODERATOR
+    USER
+}
+
+input CreateAdminUserInput {
+    active: Boolean!
+    email: String!
+    name: String!
+    password: String!
+    role: UserRole!
+}
+
+input LoginUserInput {
+    email: String!
+    password: String!
+}
+
+input RegisterUserInput {
+    email: String!
+    name: String!
+    password: String!
+}
+
+input UpdateAdminUserInput {
+    active: Boolean
+    email: String
+    id: Int!
+    name: String
+    password: String
+    role: UserRole
+}
