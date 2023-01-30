@@ -5,7 +5,7 @@ import {
   RegisterUiComponent,
 } from '@my-estate-webapp/register/ui';
 import { registerFeatureForm } from './register-feature-form';
-import { RegisterGQL } from 'graphql';
+import { RegisterGQL } from 'app-graphql';
 
 @Component({
   selector: 'my-estate-webapp-register-feature',
@@ -28,13 +28,7 @@ export default class RegisterFeatureComponent {
       return;
     }
     this.registerGQL
-      .mutate({
-        registerInput: {
-          name,
-          email,
-          password,
-        },
-      })
+      .mutate({ name, email, password })
       .subscribe((result) => console.log(result));
   }
 }

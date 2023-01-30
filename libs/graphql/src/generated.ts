@@ -3,15 +3,9 @@ import { Injectable } from '@angular/core';
 import * as Apollo from 'apollo-angular';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -48,21 +42,26 @@ export type Mutation = {
   userUpdate: Scalars['Boolean'];
 };
 
+
 export type MutationLoginArgs = {
   loginInput: LoginUserInput;
 };
+
 
 export type MutationRegisterArgs = {
   registerInput: RegisterUserInput;
 };
 
+
 export type MutationUserCreateArgs = {
   adminUser: CreateAdminUserInput;
 };
 
+
 export type MutationUserDeleteArgs = {
   id: Scalars['Int'];
 };
+
 
 export type MutationUserUpdateArgs = {
   adminUser: UpdateAdminUserInput;
@@ -75,9 +74,11 @@ export type Query = {
   users: UserRows;
 };
 
+
 export type QueryUserArgs = {
   id: Scalars['Int'];
 };
+
 
 export type QueryUsersArgs = {
   limit?: Scalars['Int'];
@@ -94,7 +95,7 @@ export type RegisterUserInput = {
 
 export enum SortDir {
   Asc = 'ASC',
-  Desc = 'DESC',
+  Desc = 'DESC'
 }
 
 export type UpdateAdminUserInput = {
@@ -117,7 +118,7 @@ export type User = {
 export enum UserRole {
   Admin = 'ADMIN',
   Moderator = 'MODERATOR',
-  User = 'USER',
+  User = 'USER'
 }
 
 export type UserRows = {
@@ -127,41 +128,29 @@ export type UserRows = {
 };
 
 export type RegisterMutationVariables = Exact<{
-  registerInput: RegisterUserInput;
+  name: Scalars['String'];
+  email: Scalars['String'];
+  password: Scalars['String'];
 }>;
 
-export type RegisterMutation = {
-  __typename?: 'Mutation';
-  register: {
-    __typename?: 'User';
-    id: number;
-    name: string;
-    email: string;
-    role: string;
-  };
-};
+
+export type RegisterMutation = { __typename?: 'Mutation', register: { __typename?: 'User', id: number } };
 
 export const RegisterDocument = gql`
-  mutation register($registerInput: RegisterUserInput!) {
-    register(registerInput: $registerInput) {
-      id
-      name
-      email
-      role
-    }
-  }
-`;
-
-@Injectable({
-  providedIn: 'root',
-})
-export class RegisterGQL extends Apollo.Mutation<
-  RegisterMutation,
-  RegisterMutationVariables
-> {
-  document = RegisterDocument;
-
-  constructor(apollo: Apollo.Apollo) {
-    super(apollo);
+    mutation register($name: String!, $email: String!, $password: String!) {
+  register(registerInput: {email: $email, password: $password, name: $name}) {
+    id
   }
 }
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class RegisterGQL extends Apollo.Mutation<RegisterMutation, RegisterMutationVariables> {
+    override document = RegisterDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }

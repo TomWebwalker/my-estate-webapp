@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import AppComponent from './app/app.component';
 import { provideRouter } from '@angular/router';
-import { InMemoryCache } from '@apollo/client';
+import { InMemoryCache } from '@apollo/client/core';
 import { APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { routes } from './routes';
