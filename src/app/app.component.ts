@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
   standalone: true,
 })
-export default class AppComponent {
-  title = 'my-estate-webapp';
-}
+export default class AppComponent {}
