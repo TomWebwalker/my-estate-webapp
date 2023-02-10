@@ -1,0 +1,6 @@
+<mat-form-field *ngIf='ngControl' appearance="outline" color='primary'>
+  <mat-label>{{ inputLabel }}</mat-label>
+  <input matInput [type]="inputType" [formControl]='ngControl'>
+  <span *ngIf='inputPrefix' matTextPrefix>{{ inputPrefix }}</span>
+  <span *ngIf='inputSuffix' matTextSuffix>{{ inputSuffix }}</span>
+</mat-form-field>

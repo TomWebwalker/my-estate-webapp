@@ -14,7 +14,7 @@ import { RegisterGQL } from 'app-graphql';
   template: ` <my-estate-webapp-register-ui
     [form]="form"
     (formSubmitted)="formSubmitHandler($event)"
-  ></my-estate-webapp-register-ui>`,
+  />`,
   styleUrls: ['./register-feature.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

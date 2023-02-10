@@ -1,1 +1,26 @@
-<p>register-ui works!</p>
+<mat-card>
+  <form [formGroup]='form' (ngSubmit)='formSubmittedHandler()'>
+  <mat-card-content>
+    <h2>My estate</h2>
+    <h5>Register form</h5>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName='name'>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName='email' type='email'>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName='password' type='password'>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary">Register</button>
+
+  </mat-card-content>
+  </form>
+</mat-card>

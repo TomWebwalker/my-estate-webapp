@@ -1,0 +1,40 @@
+$Architektura-1-hex: #1C7FA6;
+$Architektura-2-hex: #1B8CA6;
+$Architektura-3-hex: #36A6BF;
+$Architektura-4-hex: #403227;
+$Architektura-5-hex: #F2E4D8;
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$app-palette: (
+        50: lighten($Architektura-1-hex, 90%),
+        100: lighten($Architektura-1-hex, 80%),
+        200: lighten($Architektura-1-hex, 60%),
+        300: lighten($Architektura-1-hex, 40%),
+        400: lighten($Architektura-1-hex, 20%),
+        500: $Architektura-1-hex,
+        600: darken($Architektura-1-hex, 20%),
+        700: darken($Architektura-1-hex, 40%),
+        800: darken($Architektura-1-hex, 60%),
+        900: darken($Architektura-1-hex, 80%),
+        A100: #ff8a80,
+        A200: #ff5252,
+        A400: #ff1744,
+        A700: #d50000,
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $dark-primary-text,
+                400: $dark-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+                A100: $dark-primary-text,
+                A200: $light-primary-text,
+                A400: $light-primary-text,
+                A700: $light-primary-text,
+        )
+)
