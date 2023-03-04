@@ -1,29 +1,23 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import AppComponent from './app/app.component';
 import { provideRouter } from '@angular/router';
-import { InMemoryCache } from '@apollo/client/core';
-import { APOLLO_OPTIONS } from 'apollo-angular';
-import { HttpLink } from 'apollo-angular/http';
 import { routes } from './routes';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
+import { apolloProvider } from 'app-graphql';
+import { importProvidersFrom } from '@angular/core';
+import { ApolloModule } from 'apollo-angular';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideEffects(),
     provideStore(),
-    {
-      provide: APOLLO_OPTIONS,
-      useFactory(httpLink: HttpLink) {
-        return {
-          cache: new InMemoryCache(),
-          link: httpLink.create({
-            uri: 'localhost:3000/graphql',
-          }),
-        };
-      },
-      deps: [HttpLink],
-    },
+    importProvidersFrom(HttpClientModule),
+    importProvidersFrom(ApolloModule),
+    importProvidersFrom(BrowserAnimationsModule),
+    apolloProvider,
     provideRouter(routes),
   ],
 });

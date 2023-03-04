@@ -1,9 +1,8 @@
-name: CI
+name: Build verification
 on:
   push:
     branches:
-      - '**' 
-  pull_request:
+      - '**'
 
 jobs:
   main:
