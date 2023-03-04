@@ -1,6 +1,13 @@
 <mat-form-field *ngIf='ngControl' appearance="outline" color='primary'>
-  <mat-label>{{ inputLabel }}</mat-label>
+  <mat-label>{{ inputLabel }} <i>(optional)</i></mat-label>
   <input matInput [type]="inputType" [formControl]='ngControl'>
   <span *ngIf='inputPrefix' matTextPrefix>{{ inputPrefix }}</span>
   <span *ngIf='inputSuffix' matTextSuffix>{{ inputSuffix }}</span>
+
+  <ng-container *ngFor='let error of errorDictionary'>
+    <mat-error
+      *ngIf="ngControl.touched && ngControl.hasError(error.error)">
+      {{error.message}}
+    </mat-error>
+  </ng-container>
 </mat-form-field>

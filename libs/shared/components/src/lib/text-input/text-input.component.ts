@@ -9,7 +9,6 @@ import {
 import { CommonModule } from '@angular/common';
 import { TextInputType } from './typings';
 import {
-  ControlValueAccessor,
   FormControl,
   NG_VALUE_ACCESSOR,
   NgControl,
@@ -18,8 +17,6 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-// TODO: validation messages
-// TODO: optional in label
 // TODO: unit tests
 
 @Component({
@@ -42,37 +39,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     },
   ],
 })
-export class TextInputComponent<T = never>
-  implements ControlValueAccessor, AfterViewInit
-{
+export class TextInputComponent implements AfterViewInit {
   @Input() inputLabel = '';
   @Input() inputType: TextInputType = 'text';
   @Input() inputPlaceholder = '';
   @Input() inputPrefix = '';
   @Input() inputSuffix = '';
-  isDisabled = false;
+  @Input() optional = false;
+  @Input() errorDictionary: { error: string; message: string }[] = [];
   ngControl: FormControl | null = null;
   private readonly injector = inject(Injector);
-  private onChange: (value: T) => void = () => null;
-  private onTouch: (value: T) => void = () => null;
 
   ngAfterViewInit(): void {
     this.ngControl = this.injector.get(NgControl).control as FormControl;
-  }
-
-  registerOnChange(fn: never): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: never): void {
-    this.onTouch = fn;
-  }
-
-  setDisabledState(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
-  }
-
-  writeValue(obj: T): void {
-    console.log(obj);
   }
 }
