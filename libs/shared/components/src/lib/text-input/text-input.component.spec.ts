@@ -12,10 +12,12 @@ describe('TextInputComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TextInputComponent],
-      providers: [{
-        provide: NgControl,
-        useClass: MockNgControl
-      }]
+      providers: [
+        {
+          provide: NgControl,
+          useClass: MockNgControl,
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TextInputComponent);

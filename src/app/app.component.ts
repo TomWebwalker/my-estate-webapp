@@ -3,8 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'my-estate-webapp-root',
-  template: `
-    <router-outlet></router-outlet>`,
+  template: ` <router-outlet></router-outlet>`,
   styleUrls: ['./app.component.scss'],
   standalone: true,
   imports: [RouterOutlet],

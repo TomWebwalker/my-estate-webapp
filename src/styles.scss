@@ -4,13 +4,20 @@
 @include mat.core();
 
 $my-estate-webapp-primary: mat.define-palette($app-palette);
-$my-estate-webapp-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$my-estate-webapp-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
 $my-estate-webapp-warn: mat.define-palette(mat.$red-palette);
-$my-estate-webapp-theme: mat.define-light-theme((color: (
-        primary: $my-estate-webapp-primary,
-        accent: $my-estate-webapp-accent,
-        warn: $my-estate-webapp-warn,
-      ),
+$my-estate-webapp-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-estate-webapp-primary,
+      accent: $my-estate-webapp-accent,
+      warn: $my-estate-webapp-warn,
+    ),
   )
 );
 

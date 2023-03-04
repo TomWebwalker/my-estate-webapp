@@ -10,11 +10,7 @@
     "importHelpers": true,
     "target": "es2022",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom",
-      "es2020"
-    ],
+    "lib": ["es2017", "dom", "es2020"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -22,19 +18,12 @@
       "@my-estate-webapp/register/feature": [
         "libs/register/feature/src/index.ts"
       ],
-      "@my-estate-webapp/register/ui": [
-        "libs/register/ui/src/index.ts"
-      ],
+      "@my-estate-webapp/register/ui": ["libs/register/ui/src/index.ts"],
       "@my-estate-webapp/shared/components": [
         "libs/shared/components/src/index.ts"
       ],
-      "app-graphql": [
-        "libs/graphql/src/index.ts"
-      ]
+      "app-graphql": ["libs/graphql/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
