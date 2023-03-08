@@ -1,0 +1,115 @@
+$color-1: #3C74A6;
+$color-2: #0477BF;
+$color-3: #042940;
+$color-4: #417FA6;
+$color-5: #9AC1D9;
+
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$primary-palette: (
+        50: lighten($color-1, 90%),
+        100: lighten($color-1, 80%),
+        200: lighten($color-1, 60%),
+        300: lighten($color-1, 40%),
+        400: lighten($color-1, 20%),
+        500: $color-1,
+        600: darken($color-1, 20%),
+        700: darken($color-1, 40%),
+        800: darken($color-1, 60%),
+        900: darken($color-1, 80%),
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $light-primary-text,
+                400: $light-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+        )
+);
+
+$accent-palette: (
+        50: lighten($color-3, 90%),
+        100: lighten($color-3, 80%),
+        200: lighten($color-3, 60%),
+        300: lighten($color-3, 40%),
+        400: lighten($color-3, 20%),
+        500: $color-3,
+        600: darken($color-3, 20%),
+        700: darken($color-3, 40%),
+        800: darken($color-3, 60%),
+        900: darken($color-3, 80%),
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $light-primary-text,
+                400: $light-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+        )
+);
+
+/* Color Theme Swatches in Hex */
+$urban-1-hex: #1C7FA6;
+$urban-2-hex: #1B8CA6;
+$urban-3-hex: #36A6BF;
+$urban-4-hex: #403227;
+$urban-5-hex: #F2E4D8;
+
+$primary-urban-palette: (
+        50: lighten($urban-1-hex, 90%),
+        100: lighten($urban-1-hex, 80%),
+        200: lighten($urban-1-hex, 60%),
+        300: lighten($urban-1-hex, 40%),
+        400: lighten($urban-1-hex, 20%),
+        500: $urban-1-hex,
+        600: darken($urban-1-hex, 20%),
+        700: darken($urban-1-hex, 40%),
+        800: darken($urban-1-hex, 60%),
+        900: darken($urban-1-hex, 80%),
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $light-primary-text,
+                400: $light-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+        )
+);
+
+$accent-urban-palette: (
+        50: lighten($urban-3-hex, 90%),
+        100: lighten($urban-3-hex, 80%),
+        200: lighten($urban-3-hex, 60%),
+        300: lighten($urban-3-hex, 40%),
+        400: lighten($urban-3-hex, 20%),
+        500: $urban-3-hex,
+        600: darken($urban-3-hex, 20%),
+        700: darken($urban-3-hex, 40%),
+        800: darken($urban-3-hex, 60%),
+        900: darken($urban-3-hex, 80%),
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $light-primary-text,
+                400: $light-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+        )
+);

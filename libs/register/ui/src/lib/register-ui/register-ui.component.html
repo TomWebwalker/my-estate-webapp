@@ -1,1 +1,24 @@
-<p>register-ui works!</p>
+<mat-card>
+  <div class='left-content'></div>
+  <mat-card-content>
+    <img src='/assets/images/logo-no-background.svg' alt='logo'>
+  <form [formGroup]='form'>
+    <h2>Register form</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName='name'>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName='email'>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName='password' type='password'>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary">Register</button>
+    <a mat-button href="https://www.google.com/" target="_blank">Have an account? Log in</a>
+  </form>
+  </mat-card-content>
+</mat-card>
