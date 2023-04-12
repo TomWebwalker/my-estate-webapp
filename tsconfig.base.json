@@ -15,11 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "app-graphql": ["libs/graphql/src/index.ts"],
-      "@my-estate-webapp/register/feature": [
-        "libs/register/feature/src/index.ts"
-      ],
-      "@my-estate-webapp/register/ui": ["libs/register/ui/src/index.ts"]
+      "auth-register": ["libs/auth/register/src/index.ts"],
+      "app-graphql": ["libs/graphql/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

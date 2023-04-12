@@ -7,6 +7,6 @@ export const routes: Routes = [
   },
   {
     path: 'register',
-    loadComponent: () => import('@my-estate-webapp/register/feature'),
+    loadComponent: () => import('auth-register'),
   },
 ];

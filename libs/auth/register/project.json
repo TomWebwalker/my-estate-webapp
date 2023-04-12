@@ -1,16 +1,22 @@
 {
-  "name": "register-feature",
+  "name": "auth-register",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/register/feature/src",
+  "sourceRoot": "libs/auth/register/src",
   "prefix": "my-estate-webapp",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/register/feature/jest.config.ts",
+        "jestConfig": "libs/auth/register/jest.config.ts",
         "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
       }
     },
     "lint": {
@@ -18,11 +24,11 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "libs/register/feature/**/*.ts",
-          "libs/register/feature/**/*.html"
+          "libs/auth/register/**/*.ts",
+          "libs/auth/register/**/*.html"
         ]
       }
     }
   },
-  "tags": ["feature"]
+  "tags": []
 }

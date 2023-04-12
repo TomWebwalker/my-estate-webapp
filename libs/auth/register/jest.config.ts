@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'register-feature',
+  displayName: 'auth-register',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/register/feature',
+  coverageDirectory: '../../../coverage/libs/auth/register',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

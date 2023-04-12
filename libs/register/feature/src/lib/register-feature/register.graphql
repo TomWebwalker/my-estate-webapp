@@ -1,5 +1,0 @@
-mutation register($name: String!, $email: String!, $password: String!) {
-    register(registerInput: {email: $email, password: $password, name: $name}) {
-        id
-    }
-}
